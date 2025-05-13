@@ -168,6 +168,23 @@ fn demo_bitwise_xor(){
     println!("a^b :{:08b}({})", result, result);
 }
 
+
+fn demo_conditional_programming(){
+    let number = 5;
+
+    if number > 10 {
+        println!("The number is greater than 10");
+
+    }
+    else if number < 5  {
+        println!("The number is less than 5");
+        
+    }
+    else{
+        println!("The number is 5 or 10")
+    }
+}
+
 fn main(){
     println!("---Demo immutable variable---");
     demo_immutable_variable();
@@ -195,5 +212,10 @@ fn main(){
     demo_mixed_type_operations();
 
     demo_bitwise_xor();
+
+    demo_conditional_programming();
+
+
 }
+
 
