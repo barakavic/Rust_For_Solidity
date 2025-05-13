@@ -1,6 +1,8 @@
 //Outputting in rust
 // Type inference is automatic in rust
 
+use std::fmt::format;
+
 
 fn demo_immutable_variable(){
 
@@ -169,6 +171,10 @@ fn demo_bitwise_xor(){
 }
 
 
+fn binary_to_int(binary_str: &str) -> Result<u8, std::num::ParseIntError>{
+    u8::from_str_radix(binary_str,2)
+}
+
 fn demo_conditional_programming(){
     let number = 5;
 
@@ -183,6 +189,28 @@ fn demo_conditional_programming(){
     else{
         println!("The number is 5 or 10")
     }
+}
+
+fn int_to_binary(num: i8) -> String {
+    format!("{:08b}",num)
+
+}
+
+
+//using loop to run a loop infinitely for till a break
+fn demonstrate_loop(){
+    println!("---Basic Loop---");
+    let mut counter = 0;
+
+    loop{
+        println!("Counter: {}", counter);
+        counter +=1;
+        
+        if counter > 5{
+            break;
+        }
+    }
+    println!("Loop finished");
 }
 
 fn main(){
@@ -215,7 +243,12 @@ fn main(){
 
     demo_conditional_programming();
 
+    int_to_binary(8);
+
+
+    demonstrate_loop();
 
 }
+
 
 
