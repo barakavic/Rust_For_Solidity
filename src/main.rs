@@ -213,6 +213,29 @@ fn demonstrate_loop(){
     println!("Loop finished");
 }
 
+fn demo_while_loop(){
+    println!("")
+}
+
+fn demo_for_loop(){
+    println!("\n--- For Loop With Range---");
+
+
+    // iiterate over the range from 1 to 5(inclusive)
+    for i in 1..=5{
+
+        println!("number :{}",i);
+
+
+    }
+
+    //Iterate ovr the range form 0 to 3(exclusive of 3)
+
+    for j in 0..3{
+        println!("Another number: {}",j);
+    }
+}
+
 fn main(){
     println!("---Demo immutable variable---");
     demo_immutable_variable();
@@ -247,6 +270,9 @@ fn main(){
 
 
     demonstrate_loop();
+
+    demo_for_loop();
+
 
 }
 
