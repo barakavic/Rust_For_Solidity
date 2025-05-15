@@ -31,3 +31,13 @@ pub fn square(n: i32)-> i32{
     println!("Inside Square ({})",n);
     n*n
 }
+
+
+pub fn divide(numerator: f64, denominator: f64) -> Option<f64>{
+    if denominator == 0.0{
+
+    
+    return None;//Early return if denominator is zero
+    }
+    Some(numerator / denominator)//Implicit return of the result
+}
