@@ -43,6 +43,20 @@ fn main(){
     }
 
     
+        let multiplier = 3;
+        let multiply_by_multiplier = |x|x * multiplier;// closure definition
+
+        let result = multiply_by_multiplier(5);
+        println!("Result: {}", result);//Output: 15
+
+
+        let numbers = vec![1,2,3];
+        let multiplied: Vec<_> = numbers.iter().map(|n|n*multiplier).collect();
+        println!("Multiplied {:?}",multiplied);
+
+        let applied_result = functional::apply_closure(10, |y| y*multiplier);
+        println!("Applied result: {}", applied_result);
+    
 }
 
 

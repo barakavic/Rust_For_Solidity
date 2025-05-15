@@ -41,3 +41,12 @@ pub fn divide(numerator: f64, denominator: f64) -> Option<f64>{
     }
     Some(numerator / denominator)//Implicit return of the result
 }
+
+pub fn apply_closure<F>(value: i32, func: F) -> i32
+where F:Fn(i32) ->i32,
+{
+
+    println!("Inside apply_closure({}, function)", value);
+    func(value)
+
+}
