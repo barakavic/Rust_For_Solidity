@@ -1,5 +1,9 @@
 use std::collections::btree_map::Values;
 
+
+
+mod closures;
+
 mod  functional;// Declaring the functional module
 
 fn main(){
@@ -57,6 +61,27 @@ fn main(){
         let applied_result = functional::apply_closure(10, |y| y*multiplier);
         println!("Applied result: {}", applied_result);
     
+
+
+
+        //Closures
+
+        let mut counter = 0;
+        
+        let mut increment_counter = ||{//Note the 'mut' here on the closure itself
+
+        counter +=1;
+
+        println!("Counter Incremented to: {}", counter);
+
+
+        };
+
+        increment_counter();
+        increment_counter();
+
+        println!("Final Counter value: {}", counter);
+
 }
 
 
