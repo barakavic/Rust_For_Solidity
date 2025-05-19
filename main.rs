@@ -6,6 +6,41 @@ mod closures;
 
 mod  functional;// Declaring the functional module
 
+mod iterator;
+
+//Filter Iterator that runs only a true within a closure
+pub fn filter_iterator(){
+    let numbers: Vec<_>= vec![1,2,3,4,5];
+    let even: Vec<_> = numbers.iter().filter(|x| *x % 2==0).collect();
+    println!("Even Numbers: {:?}", even);
+}
+
+
+
+//find Closure
+// consumes the iterator and  returns the first element that returns true
+
+pub fn find(){
+    let numbers= vec![1,2,3,4,5];
+    let found = numbers.iter().find(|x| **x > 3);
+    println!("Found: {:?}", found);
+
+    
+}
+
+
+//Chain Iterator
+
+pub fn chain_iter(){
+    let a: Vec<_> = vec![1,2];
+    let b: Vec<_> = vec![3,4];
+
+    let result: Vec<_>  = a.iter().chain(b.iter()).collect();
+
+    println!("chained array is: {:?}", result);
+}
+
+
 fn main(){
     println!("This the main function");
 
@@ -82,6 +117,18 @@ fn main(){
 
         println!("Final Counter value: {}", counter);
 
+
+        iterator::iterators();
+
+        iterator::iterator_mut();
+
+        iterator::map();
+
+        filter_iterator();
+
+        chain_iter();
+
+        find();
 }
 
 
