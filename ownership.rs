@@ -33,4 +33,36 @@ fn main(){
     let s = gives_ownership();
     println!("s: {}",s);
 
-}//s goes out of scope
+    // another example
+
+    let y = String::from("hello");// s comes into scope
+
+    takes_ownership(y);// s value moves into the function
+                        //Its no longer valid here
+
+
+
+    let x = 5;// x comes into scope
+
+    makes_copy(x); // x moves into function
+                    // i32 is a copy , its okay to use x after
+
+
+    
+
+}//s, then y, then x goes out of scope
+
+
+fn takes_ownership(sth_string: String){//Some string comes into scope
+
+    println!("{}", sth_string);
+
+
+}//Sth string goes out of scope and drop is called. Backing memory is freed
+
+fn makes_copy(some_integer: i32){// some integer comes into scope
+
+    println!("{}",some_integer);
+
+
+}// Here, some integer goes into scope nothing major happens
